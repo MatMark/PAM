@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Lab2</string>
+    <string name="calculate">Calculate</string>
+    <string name="swap">Swap</string>
+    <string name="input_value">value</string>
+    <string name="tip_value">tip %</string>
+    <string name="nothing">-</string>
+    <string name="error">Error</string>
+    <string name="PLN">PLN</string>
+    <string name="EUR">EUR</string>
+</resources>

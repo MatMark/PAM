@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Lab4</string>
+    <string name="contacts">Kontakty</string>
+    <string name="sms">SMS</string>
+    <string name="maps">Mapy</string>
+    <string name="my_activity">Moja aktywność</string>
+
+    <string name="phone_number">Numer telefonu</string>
+    <string name="text">Tekst</string>
+    <string name="send">Wyślij</string>
+
+    <string name="latitude">Szerokość</string>
+    <string name="longitude">Długość</string>
+    <string name="go_to_map">Idź do mapy</string>
+
+    <string name="stop">Stop</string>
+
+    <string name="index">Numer indeksu</string>
+    <string name="check">Sprawdź dane</string>
+    <string name="result">Wynik</string>
+</resources>

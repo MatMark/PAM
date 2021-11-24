@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:gravity="fill_horizontal|center_vertical">
+
+            <EditText
+                android:id="@+id/valueInput"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:ems="10"
+                android:enabled="true"
+                android:gravity="center_horizontal"
+                android:hint="@string/input_value"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/tipValue"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:enabled="true"
+                android:gravity="center_horizontal"
+                android:hint="@string/tip_value"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:singleLine="true" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="50dp"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/foodRateText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="Food rate" />
+
+                <SeekBar
+                    android:id="@+id/foodRate"
+                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:max="5"
+                    android:progress="3" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/serviceRateText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="Service rate" />
+
+                <RatingBar
+                    android:id="@+id/ratingBar"
+                    style="@android:style/Widget.RatingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:max="5"
+                    android:numStars="5"
+                    android:rating="3"
+                    android:stepSize="1" />
+
+                <Button
+                    android:id="@+id/calculatedBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginRight="100dp"
+                    android:layout_weight="1"
+                    android:hapticFeedbackEnabled="false"
+                    android:onClick="calculate"
+                    android:text="@string/calculate"
+                    android:textAllCaps="true" />
+
+                <TextView
+                    android:id="@+id/calculatedValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="@string/nothing"
+                    android:textSize="34sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
