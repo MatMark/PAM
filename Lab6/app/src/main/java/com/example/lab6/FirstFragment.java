@@ -30,14 +30,14 @@ public class FirstFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-        EditText nextFragment = (EditText) view.findViewById(R.id.nextFragment);
+        EditText text = (EditText) view.findViewById(R.id.nextFragment);
         Button button = (Button) view.findViewById(R.id.button2);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bundle test = new Bundle();
-                test.putString("param1", nextFragment.getText().toString());
-                Navigation.findNavController(view).navigate(R.id.secondFragment, test);
+                FirstFragmentDirections.ActionFirstFragmentToSecondFragment action = FirstFragmentDirections.actionFirstFragmentToSecondFragment();
+            action.setMessage(text.getText().toString());
+            Navigation.findNavController(view).navigate(action);
             }
         });
     }

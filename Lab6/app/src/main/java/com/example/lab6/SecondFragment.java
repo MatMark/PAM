@@ -11,12 +11,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class SecondFragment extends Fragment {
-
-    private static final String ARG_PARAM1 = "param1";
-
-    private String mParam1;
 
     public SecondFragment() {
     }
@@ -24,12 +21,6 @@ public class SecondFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            Log.i("TEST", mParam1);
-        } else {
-            Log.i("TEST", "Empty");
-        }
     }
 
     @Override
@@ -39,34 +30,12 @@ public class SecondFragment extends Fragment {
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-        Button button = (Button) view.findViewById(R.id.buttonLastFragment);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Bundle test = new Bundle();
-                test.putString("param1", mParam1);
-
-                try {
-                    int next = Integer.parseInt(mParam1);
-                    switch (next) {
-                        case 2:
-                            Navigation.findNavController(view).navigate(R.id.secondFragment, test);
-                            break;
-                        case 3:
-                            Navigation.findNavController(view).navigate(R.id.thirdFragment, test);
-                            break;
-                        case 4:
-                            Navigation.findNavController(view).navigate(R.id.fourthFragment, test);
-                            break;
-                        default:
-                            Navigation.findNavController(view).navigate(R.id.firstFragment, test);
-                    }
-                } catch (NumberFormatException e) {
-                    Navigation.findNavController(view).navigate(R.id.firstFragment, test);
-                }
-
-            }
-        });
+    public void onStart() {
+        super.onStart();
+        TextView argText = getView().findViewById(R.id.argText);
+        SecondFragmentArgs args = SecondFragmentArgs.fromBundle( getArguments() );
+        String message = args.getMessage();
+        argText.setText(message);
     }
+
 }

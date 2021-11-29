@@ -14,44 +14,17 @@
             app:destination="@id/secondFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@animator/nav_default_exit_anim"
-            app:launchSingleTop="false"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim"
-            app:popUpTo="@id/firstFragment"
-            app:popUpToInclusive="true" />
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/secondFragment"
         android:name="com.example.lab6.SecondFragment"
         android:label="fragment_second"
         tools:layout="@layout/fragment_second" >
-        <action
-            android:id="@+id/action_secondFragment_to_thirdFragment"
-            app:destination="@id/thirdFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim"
-            app:popUpTo="@id/firstFragment"
-            app:popUpToInclusive="true" />
-        <action
-            android:id="@+id/action_secondFragment_to_fourthFragment"
-            app:destination="@id/fourthFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim"
-            app:popUpTo="@id/firstFragment"
-            app:popUpToInclusive="true" />
+        <argument
+            android:name="message"
+            app:argType="string"
+            android:defaultValue="No message" />
     </fragment>
-    <fragment
-        android:id="@+id/thirdFragment"
-        android:name="com.example.lab6.ThirdFragment"
-        android:label="fragment_third"
-        tools:layout="@layout/fragment_third" />
-    <fragment
-        android:id="@+id/fourthFragment"
-        android:name="com.example.lab6.FourthFragment"
-        android:label="fragment_fourth"
-        tools:layout="@layout/fragment_fourth" />
 </navigation>
