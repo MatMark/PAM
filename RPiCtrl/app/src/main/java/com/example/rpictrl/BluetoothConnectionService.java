@@ -43,10 +43,6 @@ public class BluetoothConnectionService {
         start();
     }
 
-    public synchronized BluetoothConnectionService getConnection() {
-        return this;
-    }
-
     private class AcceptThread extends Thread {
 
         // The local server socket
