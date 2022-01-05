@@ -9,8 +9,11 @@ import android.bluetooth.BluetoothSocket;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -295,4 +298,12 @@ public class BluetoothConnectionService {
         return mConnectedThread.mmSocket.isConnected();
     }
 
+    public void sendJSON(JSONObject json) {
+        if (isConnected()) {
+            String jsonString = json.toString();
+            byte[] bytes = jsonString.getBytes();
+            Log.d(TAG, jsonString);
+            write(bytes);
+        }
+    }
 }

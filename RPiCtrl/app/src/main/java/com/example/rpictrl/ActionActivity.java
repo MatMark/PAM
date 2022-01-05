@@ -3,6 +3,8 @@ package com.example.rpictrl;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -14,55 +16,50 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.Iterator;
-
-public class MenuActivity extends AppCompatActivity {
-    private static final String TAG = "MenuActivity";
+public class ActionActivity extends AppCompatActivity {
+    private static final String TAG = "ActionActivity";
 
     private Application myapp;
+    private JSONObject action;
     private LinearLayout layout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
-        myapp = (Application) getApplication();
+        setContentView(R.layout.activity_action);
         layout = (LinearLayout) findViewById(R.id.layout);
-        JSONObject json = null;
+        myapp = (Application) getApplication();
+
+        Bundle extras = getIntent().getExtras();
+        String actionText = extras.getString("action");
         try {
-            json = new JSONObject(myapp.interfaces);
-            JSONArray actions = json.getJSONArray("actions");
+            action = new JSONObject(actionText);
+            String name = action.getString("name");
+            JSONObject info = action.getJSONObject("info");
+            JSONObject params = info.getJSONObject("params");
+            String type = info.getString("type");
 
-            for(int i = 0; i < actions.length(); i++)
-            {
-                JSONObject action = actions.getJSONObject(i);
-                String name = action.getString("name");
-                JSONObject info = action.getJSONObject("info");
-                JSONObject params = info.getJSONObject("params");
-                String type = info.getString("type");
-
-                Button button = new Button(this);
-                button.setText(name);
-//                button.setId(i);
-                button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(view.getContext(), ActionActivity.class);
-
-                    Bundle bundle = new Bundle();
-                    bundle.putString("action", action.toString());
-                    intent.putExtras(bundle);
-
-                    startActivity(intent);
-                }
-            });
-                layout.addView(button);
-
+            FragmentManager fm = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fm.beginTransaction();
+            switch (type) {
+                case "button":
+                    ButtonFragment buttonFragment = ButtonFragment.newInstance(name, params.toString());
+                    fragmentTransaction.add(R.id.layout, buttonFragment);
+                    fragmentTransaction.commit();
+                    break;
+                case "colorpicker":
+                    ColorPickerFragment colorPickerFragment = ColorPickerFragment.newInstance(name, params.toString());
+                    fragmentTransaction.add(R.id.layout, colorPickerFragment);
+                    fragmentTransaction.commit();
+                    break;
+                default:
+                    break;
             }
+
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -88,10 +85,5 @@ public class MenuActivity extends AppCompatActivity {
     protected void onPause() {
         LocalBroadcastManager.getInstance(this).unregisterReceiver(messageReceiver);
         super.onPause();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
     }
 }

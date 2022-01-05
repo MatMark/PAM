@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ColorPickerFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+
+            <SeekBar
+                android:id="@+id/red_bar"
+                style="@android:style/Widget.DeviceDefault.Light.SeekBar"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:max="100"
+                android:progress="30"
+                android:progressBackgroundTint="#AA0000"
+                android:progressTint="#DD0000"
+                android:thumbTint="#FF0000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.502"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/blue" />
+
+            <EditText
+                android:id="@+id/editTextRed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#FF0000"
+                android:ems="3"
+                android:gravity="center_horizontal"
+                android:inputType="numberSigned|numberDecimal"
+                android:minHeight="48dp"
+                android:text="30"
+                android:textColor="#DD0000"
+                android:textColorHighlight="#FF0000"
+                android:textCursorDrawable="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/red_bar"
+                app:layout_constraintTop_toTopOf="@+id/red_bar" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+
+            <SeekBar
+                android:id="@+id/green_bar"
+                style="@android:style/Widget.DeviceDefault.Light.SeekBar"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:max="100"
+                android:progress="30"
+                android:progressBackgroundTint="#00AA00"
+                android:progressTint="#00DD00"
+                android:thumbTint="#00FF00"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/red_bar" />
+
+            <EditText
+                android:id="@+id/editTextGreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#00FF00"
+                android:ems="3"
+                android:gravity="center_horizontal"
+                android:inputType="numberSigned|numberDecimal"
+                android:minHeight="48dp"
+                android:text="30"
+                android:textColor="#00DD00"
+                android:textColorHighlight="#00FF00"
+                android:textCursorDrawable="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.517"
+                app:layout_constraintStart_toEndOf="@+id/green_bar"
+                app:layout_constraintTop_toTopOf="@+id/green_bar" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+
+            <SeekBar
+                android:id="@+id/blue_bar"
+                style="@android:style/Widget.DeviceDefault.Light.SeekBar"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:max="100"
+                android:progress="30"
+                android:progressBackgroundTint="#0000AA"
+                android:progressTint="#0000DD"
+                android:thumbTint="#0000FF"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/green_bar" />
+
+            <EditText
+                android:id="@+id/editTextBlue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#0000FF"
+                android:ems="3"
+                android:gravity="center_horizontal"
+                android:inputType="numberSigned|numberDecimal"
+                android:minHeight="48dp"
+                android:text="30"
+                android:textColor="#0000DD"
+                android:textColorHighlight="#0000FF"
+                android:textCursorDrawable="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.505"
+                app:layout_constraintStart_toEndOf="@+id/blue_bar"
+                app:layout_constraintTop_toTopOf="@+id/blue_bar" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/rgb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RGB"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/blue"
+            app:layout_constraintTop_toBottomOf="@+id/btnBluetooth" />
+    </LinearLayout>
+
+</FrameLayout>
