@@ -35,11 +35,6 @@
                 android:layout_height="wrap_content"
                 android:text="Connect" />
 
-            <Button
-                android:id="@+id/btnEndConnection"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Disconnect" />
         </LinearLayout>
 
         <LinearLayout
@@ -54,20 +49,11 @@
                 android:text="BL ON/OFF" />
 
             <Button
-                android:id="@+id/btnFindUnpairedDevices"
+                android:id="@+id/btnShowPairedDevices"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="btnDiscover"
                 android:text="Paired devices" />
         </LinearLayout>
-
-        <Button
-            android:id="@+id/btnDiscoverable_on_off"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="btnEnableDisable_Discoverable"
-            android:text="Enable Discoverable"
-            android:visibility="gone" />
 
         <ListView
             android:id="@+id/lvNewDevices"

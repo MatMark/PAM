@@ -5,20 +5,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.SeekBar;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -26,7 +19,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Application myapp;
 
-    private Button btnStartConnection;
+    private Button btnStartBLConnection;
+    private Button btnStartWEBConnection;
 
     @Override
     public void onResume() {
@@ -62,12 +56,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         myapp = (Application) getApplication();
 
-        btnStartConnection = (Button) findViewById(R.id.btnBluetooth);
+        btnStartBLConnection = (Button) findViewById(R.id.btnBluetooth);
 
-        btnStartConnection.setOnClickListener(new View.OnClickListener() {
+        btnStartBLConnection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), ConnectActivity.class);
+                Intent intent = new Intent(view.getContext(), ConnectBLActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnStartWEBConnection = (Button) findViewById(R.id.btnWeb);
+
+        btnStartWEBConnection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), ConnectWEBActivity.class);
                 startActivity(intent);
             }
         });
