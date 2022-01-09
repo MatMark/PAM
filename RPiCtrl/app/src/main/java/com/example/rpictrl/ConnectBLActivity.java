@@ -30,7 +30,6 @@ public class ConnectBLActivity extends AppCompatActivity {
     private Application myapp;
 
     private Button btnStartConnection;
-    private Button btnShowPairedDevices;
     private Button btnBack;
 
     private BluetoothAdapter mBluetoothAdapter;
@@ -45,6 +44,7 @@ public class ConnectBLActivity extends AppCompatActivity {
 
     private ListView lvNewDevices;
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,7 +56,6 @@ public class ConnectBLActivity extends AppCompatActivity {
         mBTDevices = new ArrayList<>();
 
         btnStartConnection = (Button) findViewById(R.id.btnBluetooth);
-        btnShowPairedDevices = (Button) findViewById(R.id.btnShowPairedDevices);
         btnBack = (Button) findViewById(R.id.btnBack);
 
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -75,14 +74,10 @@ public class ConnectBLActivity extends AppCompatActivity {
 
                 mBTDevice = mBTDevices.get(position);
                 myapp.mBluetoothConnection = new BluetoothConnectionService(ConnectBLActivity.this);
-
                 for (int i = 0; i < lvNewDevices.getChildCount(); i++) {
-                    if (position == i) {
-                        lvNewDevices.getChildAt(i).setBackgroundColor(getResources().getColor(R.color.fourth_dark));
-                    } else {
-                        lvNewDevices.getChildAt(i).setBackgroundColor(Color.TRANSPARENT);
-                    }
+                    lvNewDevices.getChildAt(i).setBackgroundColor(Color.TRANSPARENT);
                 }
+                view.setBackgroundColor(getResources().getColor(R.color.fourth_dark));
             }
         });
 
@@ -102,14 +97,6 @@ public class ConnectBLActivity extends AppCompatActivity {
             }
         });
 
-        btnShowPairedDevices.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.M)
-            @Override
-            public void onClick(View view) {
-                showPairedDevices();
-            }
-        });
-
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -117,6 +104,8 @@ public class ConnectBLActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        showPairedDevices();
     }
 
     @Override
@@ -136,6 +125,7 @@ public class ConnectBLActivity extends AppCompatActivity {
     public void endConnection() {
         if (myapp.mBluetoothConnection != null && myapp.mBluetoothConnection.isConnected()) {
             endBTConnection();
+            myapp.interfaces = null;
         }
     }
 
@@ -192,7 +182,7 @@ public class ConnectBLActivity extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             String text = intent.getStringExtra("my-text");
-            if (text.contains("actions")) {
+            if (text.contains("bluetooth")) {
                 myapp.interfaces = text;
                 startActivity(new Intent(context, MenuActivity.class));
             } else {

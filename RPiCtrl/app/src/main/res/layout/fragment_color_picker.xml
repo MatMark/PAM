@@ -13,6 +13,14 @@
         android:gravity="center"
         android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/titleTextView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Title"
+            android:textSize="34sp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -142,7 +150,8 @@
             android:id="@+id/rgb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="RGB"
+            android:drawableRight="@drawable/ic_baseline_send_24"
+            android:text="Send"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/blue"
             app:layout_constraintTop_toBottomOf="@+id/btnBluetooth" />

@@ -67,7 +67,10 @@ public class ConnectWEBActivity extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Toast.makeText(getBaseContext(), response, Toast.LENGTH_SHORT).show();
+                        myapp.interfaces = response;
+                        myapp.webAddress = address;
+                        startActivity(new Intent(getBaseContext(), MenuActivity.class));
+//                        Toast.makeText(getBaseContext(), response, Toast.LENGTH_SHORT).show();
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -79,7 +82,8 @@ public class ConnectWEBActivity extends AppCompatActivity {
     }
 
     public void endConnection() {
-        // TODO
+        myapp.webAddress = null;
+        myapp.interfaces = null;
     }
 
     @Override

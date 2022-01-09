@@ -41,13 +41,14 @@ public class MenuActivity extends AppCompatActivity {
             {
                 JSONObject action = actions.getJSONObject(i);
                 String name = action.getString("name");
-                JSONObject info = action.getJSONObject("info");
-                JSONObject params = info.getJSONObject("params");
-                String type = info.getString("type");
 
                 Button button = new Button(this);
                 button.setText(name);
-//                button.setId(i);
+                button.setBackgroundColor(getResources().getColor(R.color.fourth_dark));
+                LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                layoutParams.setMargins(30, 30, 30, 0);
+                button.setLayoutParams(layoutParams);
                 button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

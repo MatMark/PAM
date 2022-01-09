@@ -3,7 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Mateusz/AndroidStudioProjects/PAM/RPiCtrl/app/src/main/res/drawable/ic_arrow_left_solid.xml" value="0.3880208333333333" />
+        <entry key="..\:/Users/Mateusz/AndroidStudioProjects/PAM/RPiCtrl/app/src/main/res/drawable/ic_baseline_send_24.xml" value="0.225" />
+        <entry key="..\:/Users/Mateusz/AndroidStudioProjects/PAM/RPiCtrl/app/src/main/res/drawable/ic_bluetooth_brands.xml" value="0.3880208333333333" />
+        <entry key="..\:/Users/Mateusz/AndroidStudioProjects/PAM/RPiCtrl/app/src/main/res/drawable/ic_globe_solid.xml" value="0.3880208333333333" />
+        <entry key="..\:/Users/Mateusz/AndroidStudioProjects/PAM/RPiCtrl/app/src/main/res/drawable/ic_globe_solid_small.xml" value="0.3880208333333333" />
         <entry key="..\:/Users/Mateusz/AndroidStudioProjects/PAM/RPiCtrl/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.225" />
+        <entry key="..\:/Users/Mateusz/AndroidStudioProjects/PAM/RPiCtrl/app/src/main/res/drawable/ic_link_solid.xml" value="0.3880208333333333" />
+        <entry key="..\:/Users/Mateusz/AndroidStudioProjects/PAM/RPiCtrl/app/src/main/res/drawable/ic_plug_solid.xml" value="0.3880208333333333" />
+        <entry key="..\:/Users/Mateusz/AndroidStudioProjects/PAM/RPiCtrl/app/src/main/res/drawable/ic_power_off_solid.xml" value="0.3880208333333333" />
+        <entry key="..\:/Users/Mateusz/AndroidStudioProjects/PAM/RPiCtrl/app/src/main/res/drawable/ic_raspberry_pi_brands.xml" value="0.3880208333333333" />
+        <entry key="..\:/Users/Mateusz/AndroidStudioProjects/PAM/RPiCtrl/app/src/main/res/layout-land/activity_main.xml" value="0.3148148148148148" />
+        <entry key="..\:/Users/Mateusz/AndroidStudioProjects/PAM/RPiCtrl/app/src/main/res/layout-land/fragment_color_picker.xml" value="0.17680776014109348" />
         <entry key="..\:/Users/Mateusz/AndroidStudioProjects/PAM/RPiCtrl/app/src/main/res/layout/activity_action.xml" value="0.3578125" />
         <entry key="..\:/Users/Mateusz/AndroidStudioProjects/PAM/RPiCtrl/app/src/main/res/layout/activity_bl_connect.xml" value="0.371875" />
         <entry key="..\:/Users/Mateusz/AndroidStudioProjects/PAM/RPiCtrl/app/src/main/res/layout/activity_connect.xml" value="0.365036231884058" />
@@ -13,6 +24,8 @@
         <entry key="..\:/Users/Mateusz/AndroidStudioProjects/PAM/RPiCtrl/app/src/main/res/layout/device_adapter_view.xml" value="0.29438405797101447" />
         <entry key="..\:/Users/Mateusz/AndroidStudioProjects/PAM/RPiCtrl/app/src/main/res/layout/fragment_button.xml" value="0.371875" />
         <entry key="..\:/Users/Mateusz/AndroidStudioProjects/PAM/RPiCtrl/app/src/main/res/layout/fragment_color_picker.xml" value="0.371875" />
+        <entry key="..\:/Users/Mateusz/AndroidStudioProjects/PAM/RPiCtrl/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.3880208333333333" />
+        <entry key="..\:/Users/Mateusz/AndroidStudioProjects/PAM/RPiCtrl/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.3880208333333333" />
       </map>
     </option>
   </component>

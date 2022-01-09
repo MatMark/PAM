@@ -27,32 +27,40 @@
                 android:id="@+id/btnBack"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:drawableLeft="@drawable/ic_arrow_left_solid"
                 android:text="Back" />
-
-            <Button
-                android:id="@+id/btnBluetooth"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Connect" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/btnONOFF"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="BL ON/OFF" />
+                android:layout_marginRight="10dp"
+                android:drawableRight="@drawable/ic_power_off_solid"
+                android:text="Bluetooth" />
 
-            <Button
-                android:id="@+id/btnShowPairedDevices"
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Paired devices" />
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/ic_link_solid"
+                android:drawablePadding="10dp"
+                android:text="Paired devices:" />
+
+            <Button
+                android:id="@+id/btnBluetooth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_plug_solid"
+                android:text="Connect" />
         </LinearLayout>
 
         <ListView

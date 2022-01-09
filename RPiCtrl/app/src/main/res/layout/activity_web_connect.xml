@@ -27,7 +27,9 @@
                 android:id="@+id/textViewAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
+                android:drawableLeft="@drawable/ic_globe_solid_small"
+                android:drawablePadding="10dp"
+                android:ems="14"
                 android:inputType="textNoSuggestions"
                 android:text="http://192.168.0.32" />
         </LinearLayout>
@@ -41,12 +43,15 @@
                 android:id="@+id/btnBack"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:drawableLeft="@drawable/ic_arrow_left_solid"
                 android:text="Back" />
 
             <Button
                 android:id="@+id/btnBluetooth"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_plug_solid"
                 android:text="Connect" />
 
         </LinearLayout>
