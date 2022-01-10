@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -55,6 +56,11 @@ public class ActionActivity extends AppCompatActivity {
                     fragmentTransaction.add(R.id.layout, colorPickerFragment);
                     fragmentTransaction.commit();
                     break;
+                case "sensor":
+                    SensorFragment sensorFragment = SensorFragment.newInstance(name, params.toString());
+                    fragmentTransaction.add(R.id.layout, sensorFragment);
+                    fragmentTransaction.commit();
+                    break;
                 default:
                     break;
             }
@@ -77,6 +83,8 @@ public class ActionActivity extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             String text = intent.getStringExtra("my-text");
+            TextView valueTextView = (TextView) findViewById(R.id.valueTextView);
+            valueTextView.setText(text);
             Toast.makeText(context, text, Toast.LENGTH_SHORT).show();
         }
     };
